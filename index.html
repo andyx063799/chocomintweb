@@ -1,52 +1,114 @@
-<!-- Algo bien sencillo por que me dio flojera, luego hago algo mejor jsjajaja -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chocomint Bot - Tu Asistente Multiusos</title>
+    <title>Chocomint - Bot & Comunidad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
 
-    <header>
+    <header class="navbar">
         <div class="logo-area">
-            <img src="./assets/img/ChocoMint.png" alt="Chocomint Logo">
-            <span>Chocomint</span>
+            <img src="./assets/img/ChocoMint.png" alt="Chocomint" class="logo-img">
+            <span class="logo-text">Chocomint</span>
         </div>
-        <nav>
-            <a href="#caracteristicas">Características</a>
-            <a href="#soporte" target="_blank">Soporte</a>
-            <a href="#documentacion">Documentación</a>
+
+        <div class="nav-switch">
+            <button id="btn-bot" class="switch-btn active" onclick="switchTab('bot')">Bot</button>
+            <button id="btn-comunidad" class="switch-btn" onclick="switchTab('comunidad')">Comunidad</button>
+        </div>
+
+        <nav class="nav-links">
+            <a href="#features" id="nav-features-link">Características</a>
+            <a href="#" class="nav-disabled">Docs</a>
         </nav>
     </header>
 
-    <main class="hero-container">
-        
-        <div class="hero-text">
-            <h1>Chocomint Bot</h1>
-            <p>Un bot multipropósito moderno, modular y rápido para Discord. Inspirado en Chocolat, optimizado para las comunidades de hoy.</p>
-            
-            <div class="cta-actions">
-                <a href="https://discord.com/oauth2/authorize?client_id=1421478049861599333&scope=bot&permissions=27648992302" class="btn btn-primary">
-                    <span>Invitar Bot</span>
-                </a>
-                <a href="https://discord.gg/p4SaNeX3Th" class="btn btn-secondary">
-                    <span>Servidor de Soporte</span>
-                </a>
-                <a href="#" class="btn btn-secondary">
-                    <span>Documentación</span> (Proximamente)
-                </a>
+    <main id="bot-view" class="tab-content active">
+        <section class="hero-container">
+            <div class="hero-content">
+                <div class="badge">Rápido, Modular y Eficiente</div>
+                <h1>Tu servidor,<br><span class="text-mint">mejorado y automatizado.</span></h1>
+                <p>Un bot multipropósito diseñado con una arquitectura limpia. Inspirado en Chocolat, optimizado para gestionar las comunidades de hoy sin retrasos.</p>
+                
+                <div class="cta-actions">
+                    <a href="https://discord.com/oauth2/authorize?client_id=1421478049861599333&scope=bot&permissions=27648992302" class="btn btn-primary" target="_blank">Añadir a Discord</a>
+                    <a href="#features" class="btn btn-secondary">Ver módulos</a>
+                </div>
             </div>
-        </div>
 
-        <div class="hero-image">
-            <div class="avatar-wrapper">
-                <img src="./assets/img/ChocoMint.png" alt="Chocomint Avatar">
+            <div class="hero-visual">
+                <div class="avatar-circle-wrapper">
+                    <img src="./assets/img/ChocoMint.png" alt="Chocomint Avatar">
+                    <div class="status-indicator"></div>
+                </div>
             </div>
-        </div>
+        </section>
 
+        <section id="features" class="features-section">
+            <div class="feature-card glass-card">
+                <h3>Módulos de Utilidad</h3>
+                <p>Comandos eficientes y precisos. Desde cálculos matemáticos avanzados hasta traducción de texto en tiempo real, todo integrado en un solo lugar.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <h3>Arquitectura Modular</h3>
+                <p>Diseñado para que cada función opere de manera independiente, asegurando un rendimiento veloz y sin interrupciones en tu servidor.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <h3>Configuración Simple</h3>
+                <p>Olvídate de paneles complicados. Comandos intuitivos diseñados para administradores que valoran su tiempo.</p>
+            </div>
+        </section>
     </main>
 
+
+    <main id="comunidad-view" class="tab-content">
+        <div class="mint-blur-bg-glow"></div>
+
+        <section class="hero-container comunidad-layout">
+            <div class="hero-content">
+                <div class="badge badge-nitro">¡Sorteo de Nitro en unas semanas!</div>
+                <h1>Chocomint <span class="text-mint">House</span></h1>
+                
+                <div class="community-tags">
+                    <span class="tag">social</span>
+                    <span class="tag">juegos</span>
+                    <span class="tag">español</span>
+                    <span class="tag">amigos</span>
+                    <span class="tag">amor</span>
+                </div>
+
+                <p class="community-description">
+                    Bienvenido/a a un rincón creado para conectar personas y siendo la casa oficial del Bot Chocomint. Aquí podrás hacer nuevos amigos, charlar libremente y compartir la pasión por los juegos. 
+                    <br><br>
+                    Este espacio nace con buena vibra y un toque algo chocolatoso y mentoso que lo hace único. No somos el primer servidor en hacerlo, pero sí queremos hacerlo mejor, con dedicación y estilo propio.
+                </p>
+                
+                <div class="cta-actions">
+                    <a href="https://discord.gg/p4SaNeX3Th" class="btn btn-primary" target="_blank">Unirse al Servidor</a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="community-glass-panel">
+                    <div class="panel-section">
+                        <h4>En Desarrollo pero Listos</h4>
+                        <p>Contamos con canales configurados, roles automáticos, actividades pensadas para la comunidad y dinámicas por venir: sorteos y eventos interactivos.</p>
+                    </div>
+                    <div class="panel-section border-top">
+                        <h4>Apoyo a Creadores</h4>
+                        <p>¿Eres streamer o YouTuber de Twitch, YouTube o Kick? Te otorgamos un rol verificado y publicamos tus directos/videos bajo un Ping designado automático para ayudarte a crecer.</p>
+                    </div>
+                    <div class="panel-footer-note">
+                        ¡Cada usuario cuenta en este viaje por la comunidad!
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="./js/index.js"></script>
 </body>
 </html>
