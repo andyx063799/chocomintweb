@@ -1,128 +1,142 @@
-<!-- Este proyecto me divierte mucho, ya pronto la hare en astro -->
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chocomint - Bot & Comunidad</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/config.js"></script>
 </head>
-<body>
+<body class="bg-brand-bgMain text-brand-textPrimary antialiased overflow-x-hidden min-h-screen flex flex-col justify-between">
 
-    <header class="navbar">
-        <div class="logo-area">
-            <img src="./assets/img/ChocoMint.png" alt="Chocomint" class="logo-img">
-            <span class="logo-text">Chocomint</span>
+    <header class="navbar fixed top-0 w-full flex justify-between items-center py-4 px-[4%] md:px-[8%] bg-brand-bgMain/75 backdrop-blur-md border-b border-glass z-[1000]">
+        <div class="flex items-center gap-3 group cursor-pointer">
+            <img src="./assets/img/ChocoMint.png" alt="Chocomint" class="w-8 h-8 rounded-full transition-figma group-hover:scale-110 group-hover:rotate-12">
+            <span class="font-bold text-[1.15rem] tracking-tight transition-figma group-hover:text-brand-mint">Chocomint</span>
         </div>
 
-        <div class="nav-switch">
-            <button id="btn-bot" class="switch-btn active" onclick="switchTab('bot')">Bot</button>
-            <button id="btn-comunidad" class="switch-btn" onclick="switchTab('comunidad')">Comunidad</button>
+        <div class="flex bg-white/[0.04] p-1 rounded-full border border-glass shadow-inner">
+            <button id="btn-bot" class="bg-[#2a2020] text-brand-mint shadow-lg cursor-pointer border-none py-1.5 px-5 rounded-full text-sm font-semibold transition-figma" onclick="switchTab('bot')">Bot</button>
+            <button id="btn-comunidad" class="bg-transparent text-[#a1a1aa] hover:text-[#f5f5f5] cursor-pointer border-none py-1.5 px-5 rounded-full text-sm font-semibold transition-figma" onclick="switchTab('comunidad')">Comunidad</button>
         </div>
 
-        <nav class="nav-links">
-            <a href="#features" id="nav-features-link">Características</a>
-            <a href="#" class="nav-disabled">Docs</a>
+        <nav class="hidden md:flex items-center">
+            <a href="#features" id="nav-features-link" class="text-brand-textSecondary text-sm no-underline ml-6 hover:text-brand-mint transition-colors duration-300">Características</a>
+            <a href="#" class="text-brand-textSecondary text-sm no-underline ml-6 opacity-40 cursor-not-allowed">Wiki</a>
         </nav>
     </header>
 
-    <main class="main-wrapper">
+    <main class="w-full flex-grow relative overflow-hidden">
 
-        <div id="bot-view" class="tab-content active">
-            <section class="hero-container">
-                <div class="hero-content">
-                    <div class="badge">Amigable, Eficiente y Evolucionando</div>
-                    <h1>Tu servidor,<br><span class="text-mint">mejorado y automatizado.</span></h1>
-                    <p>Un bot multipropósito diseñado con una arquitectura limpia. Inspirado en Chocolat, optimizado para gestionar las comunidades de hoy.</p>
-                    <p>Nos encanta escuchar a nuestra comunidad y sus sugerencias, de momento el bot es gratuito por estar en etapa de crecimiento.</p>
+        <div id="bot-view" class="block w-full">
+            <section class="min-h-screen flex flex-col md:flex-row items-center justify-between pt-[7.5rem] md:pt-24 pb-8 px-[4%] md:px-[8%] gap-14 md:gap-20 max-w-[1350px] mx-auto text-center md:text-left">
+                <div class="flex-1 max-w-[620px]">
+                    <div class="inline-block py-1.5 px-3.5 bg-brand-mint/[0.08] text-brand-mint rounded-full text-[0.82rem] font-semibold mb-6 border border-brand-mint/[0.15]">
+                        Amigable, Eficiente y Evolucionando
+                    </div>
+                    <h1 class="text-[2.3rem] sm:text-[3rem] lg:text-[3.6rem] font-extrabold leading-[1.15] tracking-tight mb-6">
+                        Tu servidor,<br><span class="text-brand-mint">mejorado y automatizado.</span>
+                    </h1>
+                    <p class="text-lg text-brand-textSecondary mb-10 max-w-full">
+                        Un bot multipropósito diseñado con una arquitectura limpia. Inspirado en Chocolat, optimizado para gestionar las comunidades de hoy.
+                    </p>
+                    <p class="text-lg text-brand-textSecondary mb-10 max-w-full">
+                        Nos encanta escuchar a nuestra comunidad y sus sugerencias, de momento el bot es gratuito por estar en etapa de crecimiento.
+                    </p>
                     
-                    <div class="cta-actions">
-                        <a href="https://discord.com/oauth2/authorize?client_id=1421478049861599333&scope=bot&permissions=27648992302" class="btn btn-primary" target="_blank">Añadir a Discord</a>
-                        <a href="#features" class="btn btn-secondary">Ver módulos</a>
+                    <div class="flex gap-3 justify-center md:justify-start">
+                        <a href="https://discord.com/oauth2/authorize?client_id=1421478049861599333&scope=bot&permissions=27648992302" class="py-3 px-6 rounded-xl font-semibold text-[0.95rem] no-underline bg-brand-mint text-brand-bgMain hover:bg-brand-mintHover hover:-translate-y-1 hover:shadow-[0_12px_24px_rgba(163,228,215,0.3)] transition-figma" target="_blank">Añadir a Discord</a>
+                        <a href="#features" class="py-3 px-6 rounded-xl font-semibold text-[0.95rem] no-underline bg-white/[0.04] text-brand-textPrimary border border-glass hover:bg-white/[0.08] hover:border-white/[0.15] transition-figma">Ver módulos</a>
                     </div>
                 </div>
 
-                <div class="hero-visual">
-                    <div class="avatar-circle-wrapper">
-                        <img src="./assets/img/ChocoMint.png" alt="Chocomint Avatar">
-                        <div class="status-indicator"></div>
+                <div class="flex-[0.8] flex justify-center items-center">
+                    <div class="relative w-[240px] h-[240px] sm:w-[320px] sm:h-[320px] group">
+                        <img src="./assets/img/ChocoMint.png" alt="Chocomint Avatar" class="w-full h-full object-cover rounded-full border-4 border-brand-mint shadow-[0_16px_40px_rgba(0,0,0,0.6)] transition-figma group-hover:scale-[1.03] group-hover:shadow-[0_20px_50px_rgba(163,228,215,0.15)]">
+                        <div class="absolute bottom-[16px] right-[16px] sm:bottom-[22px] sm:right-[22px] w-5 h-5 sm:w-6 sm:h-6 bg-[#23a559] rounded-full border-4 border-brand-bgMain transition-figma group-hover:scale-110"></div>
                     </div>
                 </div>
             </section>
 
-            <section id="features" class="features-section">
-                <div class="feature-card glass-card">
-                    <h3>Módulos de Utilidad</h3>
-                    <p>Comandos eficientes y precisos. Desde cálculos matemáticos avanzados hasta traducción de texto en tiempo real, todo integrado en un solo lugar.</p>
+            <section id="features" class="py-16 px-[4%] md:px-[8%] grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-8 max-w-[1350px] mx-auto">
+                <div class="bg-brand-bgSurface/45 border border-glass rounded-[20px] p-8 hover:bg-brand-bgSurface/70 hover:border-brand-mint/30 hover:-translate-y-1.5 shadow-lg transition-figma cursor-default">
+                    <h3 class="mb-3 text-brand-mint font-semibold text-xl">Módulos de Utilidad</h3>
+                    <p class="text-brand-textSecondary text-[0.92rem]">Comandos eficientes y precisos. Desde cálculos matemáticos avanzados hasta traducción de texto en tiempo real, todo integrado en un solo lugar.</p>
                 </div>
-                <div class="feature-card glass-card">
-                    <h3>Arquitectura Modular</h3>
-                    <p>Diseñado para que cada función opere de manera independiente, asegurando un rendimiento veloz y sin interrupciones en tu servidor.</p>
+                <div class="bg-brand-bgSurface/45 border border-glass rounded-[20px] p-8 hover:bg-brand-bgSurface/70 hover:border-brand-mint/30 hover:-translate-y-1.5 shadow-lg transition-figma cursor-default">
+                    <h3 class="mb-3 text-brand-mint font-semibold text-xl">Arquitectura Modular</h3>
+                    <p class="text-brand-textSecondary text-[0.92rem]">Diseñado para que cada función opere de manera independiente, asegurando un rendimiento veloz y sin interrupciones en tu servidor.</p>
                 </div>
-                <div class="feature-card glass-card">
-                    <h3>Configuración Simple</h3>
-                    <p>Olvídate de paneles complicados. Comandos intuitivos diseñados para administradores que valoran su tiempo.</p>
+                <div class="bg-brand-bgSurface/45 border border-glass rounded-[20px] p-8 hover:bg-brand-bgSurface/70 hover:border-brand-mint/30 hover:-translate-y-1.5 shadow-lg transition-figma cursor-default">
+                    <h3 class="mb-3 text-brand-mint font-semibold text-xl">Configuración Simple</h3>
+                    <p class="text-brand-textSecondary text-[0.92rem]">Olvídate de paneles complicados. Comandos intuitivos diseñados para administradores que valoran su tiempo.</p>
                 </div>
             </section>
 
-            <section class="partners-section">
-                <h2 class="partners-title">Colaboradores y Comunidades Aliadas</h2>
+            <section class="py-16 px-[4%] md:px-[8%] max-w-[1350px] mx-auto w-full">
+                <h2 class="text-center text-2xl font-bold text-brand-textPrimary mb-8 tracking-tight">Colaboradores y Comunidades Aliadas</h2>
                 
-                <div class="partners-grid">
-                    <div class="partner-card">
-                        <div class="partner-info">
-                            <img src="./assets/servers/maehouse.png" alt="♡・MAE HOUSE︰ଓ" class="partner-img">
-                            <div class="partner-text">
-                                <h4>♡・MAE HOUSE︰ଓ</h4>
-                                <p>Grupo y familia de Mae, servidor de juegos y charla</p>
+                <div class="flex justify-center items-center gap-6 flex-wrap w-full">
+                    <div class="bg-brand-bgSurface/45 border border-glass rounded-[20px] p-5 flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-12 w-full max-w-[480px] text-center sm:text-left hover:bg-brand-bgSurface/60 hover:border-brand-mint/[0.3] hover:-translate-y-1 shadow-md transition-figma group">
+                        <div class="flex flex-col sm:flex-row items-center gap-4">
+                            <img src="./assets/servers/maehouse.png" alt="♡・MAE HOUSE︰ଓ" class="w-12 h-12 rounded-full border-2 border-brand-mint object-cover transition-figma group-hover:rotate-6">
+                            <div>
+                                <h4 class="text-[0.98rem] font-semibold text-brand-textPrimary mb-0.5 group-hover:text-brand-mint transition-colors duration-300">♡・MAE HOUSE︰ଓ</h4>
+                                <p class="text-[0.82rem] text-brand-textSecondary leading-normal">Grupo y familia de Mae, servidor de juegos y charla</p>
                             </div>
                         </div>
-                        <a href="https://discord.com/invite/mae-house-856342817328988191" target="_blank" class="btn-partner">Unirse</a>
+                        <a href="https://discord.com/invite/mae-house-856342817328988191" target="_blank" class="w-full sm:w-auto py-2 px-4 bg-brand-mint/[0.1] text-brand-mint rounded-xl text-[0.85rem] font-semibold no-underline border border-brand-mint/[0.15] whitespace-nowrap hover:bg-brand-mint hover:text-brand-bgMain hover:shadow-[0_4px_12px_rgba(163,228,215,0.25)] hover:scale-[1.02] transition-figma">Unirse</a>
                     </div>
                 </div>
             </section>
         </div>
 
-        <div id="comunidad-view" class="tab-content">
-            <div class="mint-blur-bg-glow"></div>
+        <div id="comunidad-view" class="hidden w-full relative bg-brand-bgSurface/[0.15] backdrop-blur-[18px]">
+            <div class="absolute top-[10%] right-[5%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(163,228,215,0.22)_0%,rgba(163,228,215,0.05)_45%,rgba(0,0,0,0)_70%)] z-0 pointer-events-none filter blur-[50px] animate-mint-pulse"></div>
 
-            <section class="hero-container comunidad-layout">
-                <div class="hero-content">
-                    <div class="badge badge-nitro">¡Sorteo de Nitro a los 100 miembros!</div>
-                    <h1>Chocomint <span class="text-mint">House</span></h1>
+            <section class="relative z-10 min-h-screen flex flex-col md:flex-row items-center justify-between pt-[7.5rem] md:pt-24 pb-8 px-[4%] md:px-[8%] gap-14 md:gap-20 max-w-[1350px] mx-auto text-center md:text-left">
+                <div class="flex-1 max-w-[620px]">
+                    <div class="inline-block py-1.5 px-3.5 bg-rose-500/[0.1] text-[#ff73fa] rounded-full text-[0.82rem] font-semibold mb-6 border border-[#ff73fa]/[0.2]">
+                        ¡Sorteo de Nitro a los 100 miembros!
+                    </div>
+                    <h1 class="text-[2.3rem] sm:text-[3rem] lg:text-[3.6rem] font-extrabold leading-[1.15] tracking-tight mb-6">
+                        Chocomint <span class="text-brand-mint">House</span>
+                    </h1>
                     
-                    <div class="community-tags">
-                        <span class="tag">social</span>
-                        <span class="tag">juegos</span>
-                        <span class="tag">español</span>
-                        <span class="tag">amigos</span>
-                        <span class="tag">comunidad</span>
+                    <div class="flex flex-wrap gap-2 mb-6 justify-center md:justify-start">
+                        <span class="bg-brand-mint/[0.06] border border-brand-mint/[0.2] py-1 px-3 rounded-md text-[0.8rem] font-medium text-brand-mint lowercase backdrop-blur-md hover:bg-brand-mint/20 hover:border-brand-mint/50 hover:scale-105 transition-figma cursor-default">social</span>
+                        <span class="bg-brand-mint/[0.06] border border-brand-mint/[0.2] py-1 px-3 rounded-md text-[0.8rem] font-medium text-brand-mint lowercase backdrop-blur-md hover:bg-brand-mint/20 hover:border-brand-mint/50 hover:scale-105 transition-figma cursor-default">juegos</span>
+                        <span class="bg-brand-mint/[0.06] border border-brand-mint/[0.2] py-1 px-3 rounded-md text-[0.8rem] font-medium text-brand-mint lowercase backdrop-blur-md hover:bg-brand-mint/20 hover:border-brand-mint/50 hover:scale-105 transition-figma cursor-default">español</span>
+                        <span class="bg-brand-mint/[0.06] border border-brand-mint/[0.2] py-1 px-3 rounded-md text-[0.8rem] font-medium text-brand-mint lowercase backdrop-blur-md hover:bg-brand-mint/20 hover:border-brand-mint/50 hover:scale-105 transition-figma cursor-default">amigos</span>
+                        <span class="bg-brand-mint/[0.06] border border-brand-mint/[0.2] py-1 px-3 rounded-md text-[0.8rem] font-medium text-brand-mint lowercase backdrop-blur-md hover:bg-brand-mint/20 hover:border-brand-mint/50 hover:scale-105 transition-figma cursor-default">comunidad</span>
                     </div>
 
-                    <p class="community-description">
+                    <p class="text-lg text-[#d4d4d8] mb-10 max-w-full">
                         Bienvenido/a a un rincón creado para conectar personas y siendo la casa oficial del Bot Chocomint. Aquí podrás hacer nuevos amigos, charlar libremente y compartir la pasión por los juegos. 
                         <br><br>
-                        Este espacio nace con buena vibra y un toque algo chocolatoso y mentoso que lo hace único. No somos el primer servidor en hacerlo, pero sí queremos hacerlo mejor, con dedicación y estilo propio.
+                        Este espacio nace con buena vibra y un toque algo chocolatoso y mentoso que lo hace unique. No somos el primer servidor en hacerlo, pero sí queremos hacerlo mejor, con dedicación y estilo propio.
                     </p>
                     
-                    <div class="cta-actions">
-                        <a href="https://discord.gg/p4SaNeX3Th" class="btn btn-primary" target="_blank">Unirse al Servidor</a>
+                    <div class="flex gap-3 justify-center md:justify-start">
+                        <a href="https://discord.gg/p4SaNeX3Th" class="py-3 px-6 rounded-xl font-semibold text-[0.95rem] no-underline bg-brand-mint text-brand-bgMain hover:bg-brand-mintHover hover:-translate-y-1 hover:shadow-[0_12px_24px_rgba(163,228,215,0.3)] transition-figma" target="_blank">Unirse al Servidor</a>
                     </div>
                 </div>
 
-                <div class="hero-visual">
-                    <div class="community-glass-panel">
-                        <div class="panel-section">
-                            <h4>En Desarrollo pero Listos</h4>
-                            <p>Contamos con canales configurados, roles automáticos, actividades pensadas para la comunidad y dinámicas por venir: sorteos y eventos interactivos.</p>
+                <div class="flex-[0.8] w-full flex justify-center items-center">
+                    <div class="w-full max-w-[440px] bg-brand-bgSurface/[0.3] backdrop-blur-[25px] border border-brand-mint/[0.15] rounded-[24px] p-10 flex flex-col gap-7 text-left shadow-[0_24px_50px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.08)] hover:border-brand-mint/[0.3] hover:bg-brand-bgSurface/[0.4] hover:shadow-[0_32px_60px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.12)] hover:-translate-y-1 transition-figma">
+                        <div>
+                            <h4 class="text-brand-mint font-semibold text-[1.05rem] mb-2 flex items-center gap-1.5">En Desarrollo pero Listos</h4>
+                            <p class="text-[0.9rem] text-brand-textSecondary leading-relaxed">Contamos con canales configurados, roles automáticos, actividades pensadas para la comunidad y dinámicas por venir: sorteos y eventos interactivos.</p>
                         </div>
-                        <div class="panel-section border-top">
-                            <h4>Apoyo a Creadores</h4>
-                            <p>¿Eres streamer o YouTuber de Twitch, YouTube o Kick? Te otorgamos un rol verificado y publicamos tus directos/videos bajo un Ping designado automático para ayudarte a crecer.</p>
+                        <div class="border-t border-white/[0.08] pt-6">
+                            <h4 class="text-brand-mint font-semibold text-[1.05rem] mb-2 flex items-center gap-1.5">Apoyo a Creadores</h4>
+                            <p class="text-[0.9rem] text-brand-textSecondary leading-relaxed">¿Eres streamer o YouTuber de Twitch, YouTube o Kick? Te otorgamos un rol verificado y publicamos tus directos/videos bajo un Ping designado automático para ayudarte a crecer.</p>
                         </div>
-                        <div class="panel-section border-top" style="border: none; padding: 0;">
-                            <div class="panel-footer-note">
+                        <div class="pt-2">
+                            <div class="text-[0.85rem] italic text-brand-mint text-center opacity-90 tracking-wide">
                                 ¡Cada usuario cuenta en este viaje por la comunidad!
                             </div>
                         </div>
